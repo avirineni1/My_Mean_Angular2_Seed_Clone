@@ -2,9 +2,16 @@
  <div class="starter-template">
      <br><br>
      <br><br>
-     <h1>Users:</h1>
-     <ul>
-         <li *ngFor="#user of users">{{user.username}}</li>
-     </ul>
+     <h1>Login:</h1>
+    <form #f="ngForm" (ngSubmit)="onSubmit()">
+
+        <label for="username">Username</label>
+        <input type="text" [(ngModel)]="login.username" required>
+
+        <label for="password">Password</label>
+        <input type="password" [(ngModel)]="login.password" required>
+
+        <button type="submit" class="btn btn-primary" [disabled]="!f.valid">submit</button>
+    </form>
  </div>
 </div>

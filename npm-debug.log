@@ -2,21 +2,21 @@
 1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
 1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
 1 verbose cli   'run',
-1 verbose cli   'browsersync' ]
+1 verbose cli   'watch:less' ]
 2 info using npm@3.8.6
 3 info using node@v6.0.0
-4 verbose run-script [ 'prebrowsersync', 'browsersync', 'postbrowsersync' ]
-5 info lifecycle MEA2N@0.0.1~prebrowsersync: MEA2N@0.0.1
-6 silly lifecycle MEA2N@0.0.1~prebrowsersync: no script for prebrowsersync, continuing
-7 info lifecycle MEA2N@0.0.1~browsersync: MEA2N@0.0.1
-8 verbose lifecycle MEA2N@0.0.1~browsersync: unsafe-perm in lifecycle true
-9 verbose lifecycle MEA2N@0.0.1~browsersync: PATH: C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;A:\MEAN Stack Projects\clone1\node_modules\.bin;C:\Program Files\nodejs;C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;A:\MEAN Stack Projects\clone1\node_modules\.bin;C:\Program Files\nodejs;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;c:\Program Files\Intel\WiFi\bin\;c:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Brackets\command;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\Program Files (x86)\Google\Chrome\Application;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;c:\Program Files\Intel\WiFi\bin\;c:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\aviri\AppData\Roaming\npm
-10 verbose lifecycle MEA2N@0.0.1~browsersync: CWD: A:\MEAN Stack Projects\clone1
-11 silly lifecycle MEA2N@0.0.1~browsersync: Args: [ '/d /s /c',
-11 silly lifecycle   'browser-sync start --files "public/**/*.*" --proxy 127.127.0.1:8080 --reload-delay=300 --reload-debounce=500' ]
-12 silly lifecycle MEA2N@0.0.1~browsersync: Returned: code: 1  signal: null
-13 info lifecycle MEA2N@0.0.1~browsersync: Failed to exec browsersync script
-14 verbose stack Error: MEA2N@0.0.1 browsersync: `browser-sync start --files "public/**/*.*" --proxy 127.127.0.1:8080 --reload-delay=300 --reload-debounce=500`
+4 verbose run-script [ 'prewatch:less', 'watch:less', 'postwatch:less' ]
+5 info lifecycle MEA2N@0.0.1~prewatch:less: MEA2N@0.0.1
+6 silly lifecycle MEA2N@0.0.1~prewatch:less: no script for prewatch:less, continuing
+7 info lifecycle MEA2N@0.0.1~watch:less: MEA2N@0.0.1
+8 verbose lifecycle MEA2N@0.0.1~watch:less: unsafe-perm in lifecycle true
+9 verbose lifecycle MEA2N@0.0.1~watch:less: PATH: C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;A:\MEAN Stack Projects\clone1\node_modules\.bin;C:\Program Files\nodejs;C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;A:\MEAN Stack Projects\clone1\node_modules\.bin;C:\Program Files\nodejs;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;c:\Program Files\Intel\WiFi\bin\;c:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Brackets\command;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\Program Files (x86)\Google\Chrome\Application;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;c:\Program Files\Intel\WiFi\bin\;c:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\aviri\AppData\Roaming\npm
+10 verbose lifecycle MEA2N@0.0.1~watch:less: CWD: A:\MEAN Stack Projects\clone1
+11 silly lifecycle MEA2N@0.0.1~watch:less: Args: [ '/d /s /c',
+11 silly lifecycle   'less-watch-compiler public/assets/less/styles.less public/assets/css/styles.css' ]
+12 silly lifecycle MEA2N@0.0.1~watch:less: Returned: code: 1  signal: null
+13 info lifecycle MEA2N@0.0.1~watch:less: Failed to exec watch:less script
+14 verbose stack Error: MEA2N@0.0.1 watch:less: `less-watch-compiler public/assets/less/styles.less public/assets/css/styles.css`
 14 verbose stack Exit status 1
 14 verbose stack     at EventEmitter.<anonymous> (C:\Program Files\nodejs\node_modules\npm\lib\utils\lifecycle.js:239:16)
 14 verbose stack     at emitTwo (events.js:106:13)
@@ -29,18 +29,18 @@
 15 verbose pkgid MEA2N@0.0.1
 16 verbose cwd A:\MEAN Stack Projects\clone1
 17 error Windows_NT 10.0.10586
-18 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "run" "browsersync"
+18 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "run" "watch:less"
 19 error node v6.0.0
 20 error npm  v3.8.6
 21 error code ELIFECYCLE
-22 error MEA2N@0.0.1 browsersync: `browser-sync start --files "public/**/*.*" --proxy 127.127.0.1:8080 --reload-delay=300 --reload-debounce=500`
+22 error MEA2N@0.0.1 watch:less: `less-watch-compiler public/assets/less/styles.less public/assets/css/styles.css`
 22 error Exit status 1
-23 error Failed at the MEA2N@0.0.1 browsersync script 'browser-sync start --files "public/**/*.*" --proxy 127.127.0.1:8080 --reload-delay=300 --reload-debounce=500'.
+23 error Failed at the MEA2N@0.0.1 watch:less script 'less-watch-compiler public/assets/less/styles.less public/assets/css/styles.css'.
 23 error Make sure you have the latest version of node.js and npm installed.
 23 error If you do, this is most likely a problem with the MEA2N package,
 23 error not with npm itself.
 23 error Tell the author that this fails on your system:
-23 error     browser-sync start --files "public/**/*.*" --proxy 127.127.0.1:8080 --reload-delay=300 --reload-debounce=500
+23 error     less-watch-compiler public/assets/less/styles.less public/assets/css/styles.css
 23 error You can get information on how to open an issue for this project with:
 23 error     npm bugs MEA2N
 23 error Or if that isn't available, you can get their info via:

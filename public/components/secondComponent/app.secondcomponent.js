@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/http'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/http', "angular2/router", "../authenticate", 'rxjs/add/operator/catch'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/http'], function(exports_1, context_
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, http_1;
+    var core_1, http_1, router_1, authenticate_1;
     var secondComponent;
     return {
         setters:[
@@ -19,22 +19,40 @@ System.register(['angular2/core', 'angular2/http'], function(exports_1, context_
             },
             function (http_1_1) {
                 http_1 = http_1_1;
-            }],
+            },
+            function (router_1_1) {
+                router_1 = router_1_1;
+            },
+            function (authenticate_1_1) {
+                authenticate_1 = authenticate_1_1;
+            },
+            function (_1) {}],
         execute: function() {
             let secondComponent = class secondComponent {
-                constructor(http) {
-                    this.http = http;
+                constructor(router, auth) {
+                    this.router = router;
+                    this.auth = auth;
                     this.users = [];
-                    this.http.get('http://localhost:8080/api/users')
-                        .subscribe(data => this.users = data.json());
+                    this.login = {};
+                }
+                onSubmit() {
+                    this.auth.doLogin(this.login['username'].toString(), this.login['password'].toString())
+                        .subscribe(response => localStorage.setItem('jwt', response.token_id), error => this.errorMessage = error);
+                    /*.catch(function(e){
+                      console.log(e);
+                    });*/
+                    if (localStorage.getItem('jwt')) {
+                        this.router.navigate(['Home']);
+                    }
                 }
             };
             secondComponent = __decorate([
                 core_1.Component({
                     selector: "second-component",
-                    templateUrl: `components/secondComponent/secondComponent.html`
+                    templateUrl: `components/secondComponent/secondComponent.html`,
+                    providers: [authenticate_1.Authentication, http_1.HTTP_PROVIDERS]
                 }), 
-                __metadata('design:paramtypes', [http_1.Http])
+                __metadata('design:paramtypes', [router_1.Router, authenticate_1.Authentication])
             ], secondComponent);
             exports_1("secondComponent", secondComponent);
         }

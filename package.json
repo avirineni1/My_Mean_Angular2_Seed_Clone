@@ -9,7 +9,7 @@
     "build:by": "browserify public/assets/js/browserify_libs.js -o public/assets/js/libs.js",
     "watch:by": "watchify public/assets/js/browserify_libs.js -o public/assets/js/libs.js",
     "build:less": "lessc --clean-css public/assets/less/styles.less public/assets/css/styles.css",
-    "watch:less": "less-watch-compiler public/assets/less/ public/assets/css/ styles.less",
+    "watch:less": "less-watch-compiler public/assets/less/styles.less public/assets/css/styles.css",
     "build:ts": "tsc",
     "watch:ts": "tsc -w",
     "browsersync": "browser-sync start --files \"public/**/*.*\" --proxy 127.127.0.1:8080 --reload-delay=300 --reload-debounce=500"
@@ -25,6 +25,7 @@
     "jsonwebtoken": "^5.7.0",
     "mongoose": "^4.4.8",
     "morgan": "^1.7.0",
+    "nodemon": "^1.9.2",
     "reflect-metadata": "0.1.2",
     "rxjs": "5.0.0-beta.2",
     "systemjs": "0.19.24",

@@ -1,16 +1,31 @@
 import {Component} from 'angular2/core';
-import {Http, HTTP_PROVIDERS} from 'angular2/http';
+import {NgForm}    from 'angular2/common';
+import { HTTP_PROVIDERS} from 'angular2/http';
+import {Router} from "angular2/router";
+import {Authentication} from "../authenticate";
+import 'rxjs/add/operator/catch';
 
 @Component({
   selector:"second-component",
-  templateUrl: `components/secondComponent/secondComponent.html`
+  templateUrl: `components/secondComponent/secondComponent.html`,
+  providers: [Authentication, HTTP_PROVIDERS]
 })
 export class secondComponent {
   users: String[] = [];
-  constructor(public http: Http) {
-    this.http.get('http://localhost:8080/api/users')
-        // Subscribe to the observable to get the parsed people object and attach it to the
-        // component
-        .subscribe(data => this.users = data.json());
+  login: Object = {};
+  errorMessage: String;
+
+  constructor( public router: Router, public auth: Authentication) {
+
+  }
+  onSubmit(){
+    this.auth.doLogin(this.login['username'].toString(), this.login['password'].toString())
+        .subscribe(response => localStorage.setItem('jwt', response.token_id), error =>  this.errorMessage = <any>error);
+        /*.catch(function(e){
+          console.log(e);
+        });*/
+    if(localStorage.getItem('jwt')){
+        this.router.navigate(['Home']);
+    }
   }
 }
